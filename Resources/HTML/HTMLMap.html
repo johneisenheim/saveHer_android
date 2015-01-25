@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style type="text/css">
+        body, html {
+            height: 100%;
+            width: 100%;
+        }
+
+        div#map {
+            width: 100%; height: 100%;
+        }
+    </style>
+    <script type="text/javascript">
+        var map = null;
+        var marker = null;
+      
+      function initialize() {
+      	 	var _zoom = 6;
+            var mapOptions = {
+                zoom: 6,
+                center: new google.maps.LatLng(42.2962494,13.4796522),
+                zoomControl: false
+            };
+
+            var map = new google.maps.Map(document.getElementById('map'),mapOptions);
+            var xmlhttp = new XMLHttpRequest();
+    
+            xmlhttp.onreadystatechange = function(e) {
+                if (xmlhttp.readyState == 4 ) {
+                    if(xmlhttp.status == 200){
+                        var json = this.responseText;  
+                        var response = JSON.parse(json);
+                        for ( var i = 0; i < response.length; i++ ){
+                            if( response[i].latitude != '' && response[i].longitude != '' )
+                                marker =  new google.maps.Marker({
+                                    position: new google.maps.LatLng(response[i].latitude, response[i].longitude), 
+                                    map: map,
+                                    title: 'Report inviato da '+response[i].nickname
+                                });
+                        }
+                    }else if(xmlhttp.status == 400) {
+                    alert("Errore nel recupero dei dati!(400)");
+                }else{
+                    alert("Errore nel recupero dei dati!");
+                }
+            }
+        };
+
+        xmlhttp.open("POST", "http://www.appsaveheritage.com/getpins.php", true);
+        xmlhttp.send();  
+        Ti.App.addEventListener('zoom', function(e){
+        	switch(e.type){
+        		case 'in':
+        			if( _zoom < 15 ){
+        				_zoom++;
+        				map.setZoom(_zoom);
+        				Ti.API.info(_zoom);
+        			}
+        		break;
+        		case 'out':
+        			if( _zoom > 0 ){
+        				_zoom--;
+        				map.setZoom(_zoom);
+        				Ti.API.info(_zoom);
+        			}
+        		break;
+        	}
+        });
+            
+        }
+      
+      function loadScript() {
+          var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyA6MK6XP_ZCGuzFNrvgo4NNpzoxER-rEDU&sensor=true&callback=initialize';
+            document.body.appendChild(script);
+        }
+
+    window.onload = loadScript;
+    </script>
+  </head>
+  <body>
+<div id="map"></div>
+  </body>
+</html>

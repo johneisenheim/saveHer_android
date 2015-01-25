@@ -1,0 +1,8 @@
+#appname:saveHer_andv2
+#publisher:johneisenheim
+#url:http://
+#image:appicon.png
+#appid:com.cnr.saveher
+#desc:saveHer è un'applicazione multipiattaforma che permette di salvaguardare i monumenti che stai visitando in pochi semplici passaggi. I cittadini sono una potenziale risorsa per la tutela del Patrimonio Culturale poiché sono dei “sensori” diffusi sul territorio. Grazie al loro aiuto, infatti, le istituzioni possono ricevere preziose e tempestive informazioni circa lo stato di conservazione dei monumenti. saveHer ha come obiettivo quello di coinvolgere i cittadini nella segnalazione di problematiche che interessano i monumenti (es.: chiese, castelli) in conseguenza di eventi naturali (es.: terremoti, frane, alluvioni), atti vandalici o incuria. Le segnalazioni da parte dei cittadini saranno utili alle istituzioni preposte alla tutela del patrimonio culturale per intraprendere opportune azioni di ripristino dello status pre-evento. Quando il cittadino/utente riscontra una problematica su di un monumento può segnalarla utilizzando questa app. Una volta giunto sul luogo del danno, scattando da una a tre foto saveHer acquisirà le coordinate e invierà una segnalazione ad un server dedicato. Le segnalazioni verranno infine esaminate ed inizierà la fase di valutazione e di eventuale riparazione del danno.
+#type:mobile
+#guid:bb58fcd7-cfd8-4409-a2be-1d0f63444e8b

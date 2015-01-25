@@ -1,0 +1,17 @@
+#
+# this is your module manifest and used by Titanium
+# during compilation, packaging, distribution, etc.
+#
+version: 1.0.0
+apiversion: 2
+description: utils
+author: Your Name
+license: Specify your license
+copyright: Copyright (c) 2014 by Your Company
+
+# these should not be edited
+name: utils
+moduleid: com.telogis.utils
+guid: 0fc09f0a-08f2-4ea4-9599-84dc89c85c13
+platform: android
+minsdk: 3.3.0.GA

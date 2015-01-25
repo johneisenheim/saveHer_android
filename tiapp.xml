@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ti:app xmlns:ti="http://ti.appcelerator.org">
+    <id>com.cnr.saveher</id>
+    <name>saveHer</name>
+    <version>1.0.1</version>
+    <publisher>johneisenheim</publisher>
+    <url>http://</url>
+    <description>saveHer è un'applicazione multipiattaforma che permette di salvaguardare i monumenti che stai visitando in pochi semplici passaggi. I cittadini sono una potenziale risorsa per la tutela del Patrimonio Culturale poiché sono dei “sensori” diffusi sul territorio. Grazie al loro aiuto, infatti, le istituzioni possono ricevere preziose e tempestive informazioni circa lo stato di conservazione dei monumenti. saveHer ha come obiettivo quello di coinvolgere i cittadini nella segnalazione di problematiche che interessano i monumenti (es.: chiese, castelli) in conseguenza di eventi naturali (es.: terremoti, frane, alluvioni), atti vandalici o incuria. Le segnalazioni da parte dei cittadini saranno utili alle istituzioni preposte alla tutela del patrimonio culturale per intraprendere opportune azioni di ripristino dello status pre-evento. Quando il cittadino/utente riscontra una problematica su di un monumento può segnalarla utilizzando questa app. Una volta giunto sul luogo del danno, scattando da una a tre foto saveHer acquisirà le coordinate e invierà una segnalazione ad un server dedicato. Le segnalazioni verranno infine esaminate ed inizierà la fase di valutazione e di eventuale riparazione del danno.</description>
+    <copyright>2014 by johneisenheim</copyright>
+    <icon>appicon.png</icon>
+    <fullscreen>false</fullscreen>
+    <navbar-hidden>false</navbar-hidden>
+    <analytics>true</analytics>
+    <guid>bb58fcd7-cfd8-4409-a2be-1d0f63444e8b</guid>
+    <property name="ti.ui.defaultunit" type="string">dp</property>
+    <ios>
+        <plist>
+            <dict>
+                <key>UISupportedInterfaceOrientations~iphone</key>
+                <array>
+                    <string>UIInterfaceOrientationPortrait</string>
+                </array>
+                <key>UISupportedInterfaceOrientations~ipad</key>
+                <array>
+                    <string>UIInterfaceOrientationPortrait</string>
+                    <string>UIInterfaceOrientationPortraitUpsideDown</string>
+                    <string>UIInterfaceOrientationLandscapeLeft</string>
+                    <string>UIInterfaceOrientationLandscapeRight</string>
+                </array>
+                <key>UIRequiresPersistentWiFi</key>
+                <false/>
+                <key>UIPrerenderedIcon</key>
+                <false/>
+                <key>UIStatusBarHidden</key>
+                <false/>
+                <key>UIStatusBarStyle</key>
+                <string>UIStatusBarStyleDefault</string>
+            </dict>
+        </plist>
+    </ios>
+    <android xmlns:android="http://schemas.android.com/apk/res/android">
+        <manifest android:versionCode="8">
+            <supports-screens android:anyDensity="true"/>
+            <uses-sdk android:minSdkVersion="10" android:targetSdkVersion="14"/>
+            <uses-sdk android:targetSdkVersion="14"/>
+            <uses-permission android:name="android.permission.ACCESS_GPS"/>
+            <uses-permission android:name="android.permission.ACCESS_LOCATION"/>
+            <permission
+                android:name="com.johneisenheim.saveher.permission.MAPS_RECEIVE" android:protectionLevel="signature"/>
+            <!-- Allows the API to download data from Google Map servers -->
+            <uses-permission android:name="android.permission.INTERNET"/>
+            <!-- Allows the API to cache data -->
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+            <!-- Use GPS for device location -->
+            <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+            <!-- Use Wi-Fi or mobile connection for device location -->
+            <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+            <!-- Allows the API to access Google web-based services -->
+            <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+            <!-- Specify OpenGL ES 2.0 as a requirement -->
+            <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
+            <!-- Replace com.domain.appid with your application ID -->
+            <uses-permission android:name="com.johneisenheim.saveher.permission.MAPS_RECEIVE"/>
+            <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+            <application android:theme="@style/Theme.Saveher">
+                <meta-data
+                    android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyBqZpKdiu5L2tEY05kNkrSTP4NdbVT-VOs"/>
+            </application>
+        </manifest>
+    </android>
+    <mobileweb>
+        <precache/>
+        <splash>
+            <enabled>true</enabled>
+            <inline-css-images>true</inline-css-images>
+        </splash>
+        <theme>default</theme>
+    </mobileweb>
+    <modules>
+        <module platform="android" version="1.0.0">com.telogis.utils</module>
+        <module platform="android">ti.compression</module>
+        <module platform="android">ti.imagefactory</module>
+        <module platform="android">ti.map</module>
+    </modules>
+    <deployment-targets>
+        <target device="android">true</target>
+        <target device="blackberry">false</target>
+        <target device="ipad">false</target>
+        <target device="iphone">false</target>
+        <target device="mobileweb">false</target>
+    </deployment-targets>
+    <sdk-version>3.5.0.GA</sdk-version>
+</ti:app>

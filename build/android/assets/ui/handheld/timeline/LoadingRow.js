@@ -1,0 +1,1 @@
+function LoadingRow(){var e=Titanium.UI.createView({backgroundColor:"#ffffff",height:30,width:"100%",layout:"horizontal",top:0}),t=Titanium.UI.createLabel({text:"Timeline",font:{fontSize:16,fontFamily:"Lato-BoldItalic"},color:"#75787B",textAlign:"center",top:10,left:10,width:Ti.UI.SIZE});return e.add(t),e}module.exports=LoadingRow;
